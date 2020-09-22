@@ -1,0 +1,98 @@
+        -:    0:Source:assignment.c
+        -:    0:Graph:assignment.gcno
+        -:    0:Data:assignment.gcda
+        -:    0:Runs:1
+        -:    1:#include<stdio.h>
+        -:    2:
+        -:    3:/* Prints the state of H2O if the temperature in degree celsius is given  */
+function stateOfH2O called 1 returned 100% blocks executed 55%
+        1:    4:void stateOfH2O(int temp) {
+        -:    5:
+       1*:    6:    if(temp > 100 || temp < 0) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+        1:    7:        printf("H2O is not liquid at this temperature\n");
+call    0 returned 100%
+        -:    8:    } 
+        -:    9:    
+       1*:   10:    if(temp < 100 && temp > 0) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:   11:        printf("H2O is liquid at this temperature\n");
+call    0 never executed
+        -:   12:    }
+        -:   13:
+        1:   14:    if(temp==100) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   15:        printf("H2O is both liquid and gas\n");
+call    0 never executed
+        -:   16:    }
+        -:   17:
+        1:   18:    if(temp==0) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   19:        printf("H2O is both liquid and solid\n");
+call    0 never executed
+        -:   20:    }
+        -:   21:
+        1:   22:}
+        -:   23:
+        -:   24:/* Checks if the two given numbers have the same sign */
+function hasSameSign called 1 returned 100% blocks executed 62%
+        1:   25:int hasSameSign(int a, int b) {
+        -:   26:
+       1*:   27:    if(a>0 && b>0) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:   28:        return 1;
+        1:   29:    } else if(a<0 && b<0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:   30:        return 1;
+        -:   31:    } else {
+        1:   32:        return 0;
+        -:   33:    }
+        -:   34:
+        -:   35:}
+        -:   36:
+function main called 1 returned 100% blocks executed 89%
+        1:   37:int main(int argc, char** argv) {
+        -:   38:
+        -:   39:    // args = a, b, temp
+        -:   40:
+        1:   41:    if(argc == 4) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:   42:
+        -:   43:        int a, b, temp;
+        1:   44:        sscanf(argv[1], "%d", &a);
+        1:   45:        sscanf(argv[2], "%d", &b);
+        1:   46:        sscanf(argv[3], "%d", &temp);
+        -:   47:
+        1:   48:        int flag = hasSameSign(a, b);
+call    0 returned 100%
+        1:   49:        if(flag==1) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   50:            printf("Same Sign\n");
+call    0 never executed
+        -:   51:        } else {
+        1:   52:            printf("Different Sign\n");
+call    0 returned 100%
+        -:   53:        }
+        -:   54:
+        1:   55:        stateOfH2O(temp);
+call    0 returned 100%
+        -:   56:    }
+        -:   57:
+        1:   58:    return 0;
+        -:   59:}
