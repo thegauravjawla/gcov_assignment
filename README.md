@@ -2,7 +2,7 @@
 
 ## Learning to use gcov 
 
-The file ``assignment.c`` contains two functions:
+The file ``assignment.c`` contain two functions:
 
 1. ``hasSameSign`` - which checks if the two numbers have the same sign or not.
 
