@@ -28,6 +28,8 @@ int hasSameSign(int a, int b) {
         return 1;
     } else if(a<0 && b<0) {
         return 1;
+    } else if(a==0 && b==0) {
+        return 1;
     } else {
         return 0;
     }
@@ -54,6 +56,8 @@ int main(int argc, char** argv) {
         }
 
         stateOfH2O(temp);
+    } else {
+        printf("Please give three arguments for Number1, Number2, Temperature\nFor example:-\n./a.out -33 45 106\n");
     }
 
     return 0;
