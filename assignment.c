@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
     // give 3 numbers as arguments
 
     if(argc == 4) {
-
+        //calling both functions
         int a, b, temp;
         sscanf(argv[1], "%d", &a);
         sscanf(argv[2], "%d", &b);
@@ -56,8 +56,27 @@ int main(int argc, char** argv) {
         }
 
         stateOfH2O(temp);
+    } else if(argc == 3) {
+        //calling only hasSameSign function
+        int a, b;
+        sscanf(argv[1], "%d", &a);
+        sscanf(argv[2], "%d", &b);
+
+        int flag = hasSameSign(a, b);
+        if(flag==1) {
+            printf("Same Sign\n");
+        } else {
+            printf("Different Sign\n");
+        }
+    } else if(argc == 2) {
+        //calling only stateOfH2O function
+        int temp;
+        sscanf(argv[3], "%d", &temp);
+
+        stateOfH2O(temp);
     } else {
-        printf("Please give three arguments for Number1, Number2, Temperature\nFor example:-\n./a.out -33 45 106\n");
+        //handling for args>4 or args<2
+        printf("Please give correct number of arguments");
     }
 
     return 0;
