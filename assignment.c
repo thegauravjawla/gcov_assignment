@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
         stateOfH2O(temp);
     } else {
         //handling for args>4 or args<2
-        printf("Please give correct number of arguments");
+        printf("Please give correct number of arguments\n");
     }
 
     return 0;
